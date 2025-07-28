@@ -60,7 +60,7 @@ function removeBasketItem(productID) {
 document.addEventListener('DOMContentLoaded', function () {
     initializeBasket();
     const favs = parseBasket();
-    document.querySelectorAll(".favorite-btn").forEach(button => {
+    document.querySelectorAll(".addcart-btn").forEach(button => {
         const productID = button.dataset.productId;
         if (favs.includes(productID)) {
             button.textContent = "In Cart";

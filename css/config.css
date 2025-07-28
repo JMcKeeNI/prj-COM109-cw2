@@ -1,0 +1,16 @@
+.active{
+    background-color: #87adff !important;
+}
+
+body {
+    font-family: 'Roboto Mono';font-size: 22px;
+}
+
+.shopItems{
+    height: 225px;
+    display: flex;
+    justify-content:
+    center; align-items:
+    center; overflow:
+    hidden;
+}
