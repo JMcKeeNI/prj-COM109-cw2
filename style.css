@@ -9,12 +9,19 @@ body {
     font-family: 'Roboto Mono', monospace;
 }
 
+header {
+    font-size: 22px;
+}
+
 nav {
     padding: 10px;
     padding-left: 20px;
     padding-right: 20px;
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid #F0F0F0;
+    align-items: center;
+    position: sticky;
 }
 
 ul {
@@ -24,4 +31,23 @@ ul {
 .links a {
     padding-left: 10px;
     padding-right: 10px;
+    list-style: none;
+}
+
+a {
+  color: black;          /* Or any color you prefer */
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav-link {
+  color: gray;
+  text-decoration: none;
+  font-weight: normal;
+  transition: color 0.2s ease;
+}
+
+.nav-link.active {
+  color: black;
+  font-weight: 700;
 }
