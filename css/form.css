@@ -1,0 +1,36 @@
+body {
+    font-family: 'Roboto Mono';font-size: 22px;
+}
+
+.formContainer {
+  display: grid;
+  place-items: center;
+}
+
+.formInput {
+    margin: 5px;
+    padding: 20px;
+    width: 100%;
+    font-size: 17px;
+    font-family: 'Roboto Mono';
+    border: 2px solid #5971c5;
+}
+
+.submitButton {
+    margin:5px; 
+    width: 115px; 
+    height: 50px
+}
+
+.containerInfoBox {
+    display: flex;
+    border: 2px solid;
+}
+
+.infoBox {
+    flex: 1;
+    margin: 10px;
+    padding: 5px;
+    border: 2px solid #ccc;
+    background-color: #87adff;
+}
