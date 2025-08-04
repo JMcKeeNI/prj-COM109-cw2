@@ -1,4 +1,4 @@
-//Basket.js
+//basket.js
 
 const DEBUG = true;
 function log(msg) {
@@ -55,29 +55,3 @@ function removeBasketItem(productID) {
         log(productID + " is not in Basket!")
     }
 }
-
-//create/load Basket on page load
-document.addEventListener('DOMContentLoaded', function () {
-    initializeBasket();
-    const favs = parseBasket();
-    document.querySelectorAll(".addcart-btn").forEach(button => {
-        const productID = button.dataset.productId;
-        if (favs.includes(productID)) {
-            button.textContent = "In Cart";
-            button.classList.add("active");
-        }
-
-        button.addEventListener("click", () => {
-            if (button.classList.contains("active")) {
-                removeBasketItem(productID);
-                button.textContent = "Add To Cart";
-                button.classList.remove("active");
-            } else {
-                addBasketItem(productID);
-                button.textContent = "In Cart";
-                button.classList.add("active");
-            }
-        });
-    });
-
-});
