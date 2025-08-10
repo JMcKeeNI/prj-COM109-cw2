@@ -29,9 +29,12 @@ function initializeBasket(){
 
 function getBasket(){
     let favs = parseBasket();
+    let count = 0;
     for (let favorite of favs) {
         log(favorite);
+        count += 1;
     }
+    return count;
 }
 
 function addBasketItem(productID){
@@ -43,6 +46,7 @@ function addBasketItem(productID){
     } else{
         log(productID + " already in Basket!")
     }
+    refreshCart();
 }
 
 function removeBasketItem(productID) {
@@ -54,4 +58,5 @@ function removeBasketItem(productID) {
     } else {
         log(productID + " is not in Basket!")
     }
+    refreshCart();
 }
