@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/form.css"></link>
     <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
     <script src="js/jquery-3.7.1.js"></script>
-    <script src="js/waitlistValidation.js"></script>
+    <script src="js/waitlistValidation.js" type="module"></script>
 </head>
 <body>
     <nav>
@@ -22,7 +22,6 @@
     </nav>
     <div></div>
     <hr>
-
      <form id="waitlistForm" action="">
         <div class="formContainer">
             <h1 style="margin:5px;">Sign Up to the Waitlist</h1>
@@ -30,7 +29,7 @@
             <p><input class="formInput" type=text" placeholder = "Last Name..." id="sName"></p>
             <p><input class="formInput" type=text" placeholder = "Email..." id="email"></p>
             <p><input class="formInput" type=text" placeholder = "Phone Number..." id="phone" ></p>
-            <button class= "submitButton" type="button" id="submit">Sign Up</button>
+            <button class="submitButton" type="submit">Sign Up</button>
         </div>
     </form>
     <div class="containerInfoBox">

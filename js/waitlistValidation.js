@@ -1,31 +1,34 @@
-$(document).ready(function() {
-    $("#submit").click(function() {
+import { validateOnlyLetters, validateEmail, validateNumber, validatePostalCode } from './formValidation.js';
 
-        // get data from inputs using jquery
-        const fName = $('#fName').val();
-        const sName = $('#sName').val();
+$(document).ready(function() {
+    $('#waitlistForm').on('submit', function(e) {
+        e.preventDefault()
+
+        // Get input values and assign to variables
+        const firstName = $('#fName').val();
+        const surname = $('#sName').val();
         const email = $('#email').val();
         const phone = $('#phone').val();
 
-        // all inputs must be filled in
-        if (!fName|!sName|!email|!phone) {
+        if (!firstName || !surname || !email || !phone) {
             alert("Please fill in all the information");
             return;
         }
 
-        // email must contain an @ symbol (validating using regex)
-        const validEmail = /@/.test(email);
-        if (!validEmail) {
-            alert('Please enter a valid email');
-            return;
-        }
+        const validFirstName = validateOnlyLetters(firstName);
+        const validSurname = validateOnlyLetters(surname);
+        const validEmail = validateEmail(email);
+        const validPhone = validateNumber(phone, 11, "Phone");
 
-        // phone number must be 11 long and only digits (validating using regex)
-        const onlyNumbers = /^\d+$/.test(phone);
-        if (!(phone.length ==  11) | !onlyNumbers) {
-            alert("Phone Number invalid");
+        if (!validFirstName || !validSurname || !validEmail || !validPhone) {
             return;
-        }
-        alert("Sign Up Success")
+        } else {
+            console.log("Waitlist Details:");
+            console.log(`First Name: ${firstName}`);
+            console.log(`Surname: ${surname}`);
+            console.log(`Email: ${email}`);
+            console.log(`Phone: ${phone}`);
+            alert("Sign Up Successful");
+        };
     });
-})
+});
