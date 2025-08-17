@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dripfast Checkout</title>
+
+    <link rel="stylesheet" href="/global.css">
+
+    <link rel="stylesheet" href="/css/form.css"></link>
+    <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+    <script src="/js/jquery-3.7.1.js"></script>
+    <script src="/js/orderFormHandler.js" type="module"></script>
+    <script src="/js/formValidation.js" type="module"></script>
+
+    <style>
+        #address-form { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 8px; display: grid; gap: 12px; }
+        label { font-size: 0.9rem; }
+        input, select { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 10px; border: none; background: #2563eb; color: white; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #1d4ed8; }
+        .success { margin-top: 10px; padding: 10px; background: #ecfdf5; border: 1px solid #bbf7d0; color: #065f46; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <header>Dripfast</header>
+        <div class="links">    
+            <a href="/index.html" class="nav-link">About</a>
+            <a href="/html/items.html" class="nav-link">Current Drop</a>
+            <a href="/html/upcoming_drops.html" class="nav-link">Previous Drops</a>            
+        </div>
+        <a href="@" id="cart">Cart (0)</a>
+    </nav>
+    <div></div>
+    <hr>
+    <form id="address-form">
+    <div>
+      <h1 style="margin:5px;">Checkout</h1>
+      <label for="firstName">First Name *</label>
+      <input id="firstName" name="firstName" type="text" required />
+      <label for="surname">Surname *</label>
+      <input id="surname" name="surname" type="text" required />
+      <label for="email">Email *</label>
+      <input id="email" name="email" type="text" required />
+      <label for="phone">Phone *</label>
+      <input id="phone" name="phone" type="text" required />
+      <label for="address">Address Line *</label>
+      <input id="address" name="address" type="text" required />
+    </div>
+    <div>
+      <label for="county">County *</label>
+      <select id="county" name="county" required>
+        <option value="">Select a country</option>
+        <option>Antrim</option>
+        <option>Armagh</option>
+        <option>Down</option>
+        <option>Fermanagh</option>
+        <option>Derry</option>
+        <option>Tyrone</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div>
+      <label for="postal">Postcode *</label>
+      <input id="postal" name="postal" type="text" required />
+      <label for="cardNumber">Card Number *</label>
+      <input id="cardNumber" name="cardNumber" type="text" required />
+      <label for="cvc">CVC *</label>
+      <input id="cvc" name="cvc" type="text" required />
+    </div>
+    <button type="submit">Check Out</button>
+    <div id="result" style="display:none" class="success"></div>
+  </form>
+  <script src="/js/basket.js"></script>
+<script src="/js/loadCart.js"></script>
+</body>
+</html>
