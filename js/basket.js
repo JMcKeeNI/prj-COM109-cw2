@@ -1,6 +1,6 @@
 //basket.js
 
-const DEBUG = true;
+const DEBUG = false;
 function log(msg) {
     if (DEBUG) console.log(msg);
 }

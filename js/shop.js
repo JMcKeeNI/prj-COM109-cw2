@@ -1,51 +1,52 @@
-//shop.js
+// shop.js
 
-document.addEventListener('DOMContentLoaded', function () {
+$(document).ready(function () {
     initializeBasket();
     const favs = parseBasket();
 
-    document.querySelectorAll(".addcart-btn").forEach(button => {
-        const productID = button.dataset.productId;
+    $(".addcart-btn").each(function () {
+        const $button = $(this);
+        const productID = $button.data("product-id");
 
         // Set price as default text
         if (products[productID]) {
-            button.textContent = `£${products[productID].price.toFixed(2)}`;
+            $button.text(`£${products[productID].price.toFixed(2)}`);
         } else {
-            button.textContent = "ERR NO PRICE";
+            $button.text("ERR NO PRICE");
         }
 
         if (favs.includes(productID)) {
-            button.textContent = "In Cart";
-            button.classList.add("active");
+            $button.text("In Cart").addClass("active");
         }
 
-        button.addEventListener("click", () => {
-            if (button.classList.contains("active")) {
+        // Click event
+        $button.on("click", function () {
+            if ($button.hasClass("active")) {
                 removeBasketItem(productID);
-                button.classList.remove("active");
-                button.textContent = "Add to Cart";
+                $button.removeClass("active").text("Add to Cart");
             } else {
                 addBasketItem(productID);
-                button.classList.add("active");
-                button.textContent = "In Cart";
+                $button.addClass("active").text("In Cart");
             }
         });
 
-        button.addEventListener("mouseenter", () => {
-            if (button.classList.contains("active")) {
-                button.textContent = "In Cart";
+        // Mouse enter
+        $button.on("mouseenter", function () {
+            if ($button.hasClass("active")) {
+                $button.text("In Cart");
             } else {
-                button.textContent = "Add to Cart";
+                $button.text("Add to Cart");
             }
         });
 
-        button.addEventListener("mouseleave", () => {
-            if (button.classList.contains("active")) {
-                button.textContent = "In Cart";
+        // Mouse leave
+        $button.on("mouseleave", function () {
+            if ($button.hasClass("active")) {
+                $button.text("In Cart");
             } else if (products[productID]) {
-                button.textContent = `£${products[productID].price.toFixed(2)}`;
+                $button.text(`£${products[productID].price.toFixed(2)}`);
             } else {
-                button.textContent = "Price N/A";
+                $button.text("Price N/A");
             }
         });
     });
