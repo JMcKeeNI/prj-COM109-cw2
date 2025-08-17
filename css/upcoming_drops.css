@@ -1,0 +1,11 @@
+h1,h2 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.preview img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.more-products-container .row .col-4 {
+    display: none;
+}
