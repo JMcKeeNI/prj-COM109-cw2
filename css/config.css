@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+ 
+* {
+  margin: 0;
+  padding: 0;
+}
+ 
+body {
+  font-family: 'Roboto Mono', monospace;
+}
+ 
+header {
+  font-size: 22px;
+}
+ 
+nav {
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgb(225, 225, 225);
+
+  position: sticky;
+}
+ 
+ul {
+  list-style-type: none;
+}
+ 
+a {
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+}
+ 
+.links a {
+  padding-left: 10px;
+  padding-right: 10px;
+  list-style: none;
+}
+ 
+.shopItems {
+  height: 225px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+ 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid rgb(225, 225, 225);
+  position: sticky;
+}
+ 
+.nav-left header {
+  font-size: 22px;
+}
+ 
+.nav-center {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  gap: 20px;
+}
+ 
+.nav-right {
+  white-space: nowrap;
+}
+ 
+.nav-link {
+  color: gray;
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+ 
+.nav-link.active {
+  color: black;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+ 
